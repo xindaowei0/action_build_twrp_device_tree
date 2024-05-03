@@ -10,7 +10,7 @@ on:
       IMG_URL:
         description: 'IMG_URL'
         required: true
-        default: 'https://github.com/momo54181/action_build_twrp_device_tree/blob/main/recovery.img'
+        default: ''
 
 jobs:
   build:
@@ -43,7 +43,7 @@ jobs:
       
     - name: Start build
       run: |
-        python3 -m twrpdtgen -o dt/ *.img
+        python -m twrpdtgen -o dt/ *.img
 
     - name: ZIP device tree
       run: |
